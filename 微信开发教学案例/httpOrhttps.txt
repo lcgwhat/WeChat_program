@@ -1,0 +1,51 @@
+    http\https协议
+        一个标准的http协议包括，几个内容：
+
+        1、请求（request）
+                报头（也就是请求的头部信息）
+                    Accept:接收服务器相应的内容信息类型，可以设置只接受某种类型数据
+                    Accept-Encoding:接受服务器响应的文件格式，gzip, deflate-》压缩后的格式
+                    Accept-Language:接受内容的语言
+                 请求（请求夹带过去的内容)
+                    Content—Length：请求过去的内容长度
+
+                    Content-Type:text/html;
+                                charset=UTF-8（utf-8编码格式）
+                    Cookie:PHPSESSID=ntq7g5sa7t3525smlrs1mbiue4（把我的本地cookie文件带过去）
+
+                    Host:127.0.0.1（请求的地址）
+
+                    Origin：（请求的完整根目录地址）
+
+                    Referer:http://106.14.214.55/demo2/index.php?c=Login&b=showm（我这个请来自那个页面）
+
+                    User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.75 Safari/537.36
+                    （我的设备信息 谷歌浏览器 XXX内核 XX版本）
+
+                    X-Requested-With:XMLHttpRequest（AJAX请求类型）
+
+        2、响应（response）
+               报头（响应回来的信息）
+                    Cache-Control:这个请求的缓存机制
+                    Content-Type:text/html; charset=UTF-8 （返回回来的数据类型）
+                    Date:Sun, 10 Dec 2017 09:04:31 GMT （返回的数据时间）
+                    Expires:Thu, 19 Nov 1981 08:52:00 GMT （缓存的话，什么时间过期）
+                    Pragma:no-cache（是否要缓存）
+               内容（响应回来的内容)
+
+
+            curl
+            （该方法实现，；利用php的curl 扩展，模拟出一个标准的http、请求，去请求其他的网站服务器，并且获取相应的内容）
+                由于前段的ajax 构造函数的http请求，参数有限，很多时候无法构造出一个完整的标准的http协议，所以我们可以用php的 curl 扩展实现
+            public function ctslogin（）
+            {
+                /*
+                    使用PHP 扩展，有四个步骤
+                    1、初始化curl句柄，（句柄就是建立一个资源）
+                    2、设置http的请求参数
+                    3、执行curl 发送请求出去
+                    4、关闭curl 句柄
+                 */
+                 $curl=curl_init();
+            }
+

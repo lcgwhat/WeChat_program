@@ -1,0 +1,8 @@
+操作者：root,操作内容：select * from tbl_title where uid='root' LIMIT 0,4;，操作时间：2017-12-10 17:04:21
+操作者：root,操作内容：select * from tbl_title where uid='root' LIMIT 0,4;，操作时间：2017-12-10 17:04:32
+操作者：root,操作内容：select * from tbl_title where uid='root' LIMIT 0,4;，操作时间：2017-12-11 09:50:54
+操作者：root,操作内容：select * from tbl_title where uid='root' LIMIT 0,4;，操作时间：2017-12-17 22:07:07
+操作者：root,操作内容：select * from tbl_title where uid='root' LIMIT 0,4;，操作时间：2017-12-18 00:00:48
+操作者：root,操作内容：select * from tbl_title where uid='root' LIMIT 0,4;，操作时间：2017-12-18 00:01:10
+操作者：root,操作内容：select * from tbl_title where uid='root' LIMIT 0,4;，操作时间：2017-12-18 00:02:25
+操作者：root,操作内容：select * from tbl_title where uid='root' LIMIT 0,4;，操作时间：2017-12-18 00:03:12

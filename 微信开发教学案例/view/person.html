@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<link href="./view/css/bootstrap.min.css" rel="stylesheet">
+<script src="./view/js/jquery-1.12.3.min.js" ></script>
+<script src="./view/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<style>
+    @media (min-width: 960px) {
+        .menu{
+            line-height: 50px;
+        }
+    }
+    .font{
+        font-size:16px;
+        color: white;
+    }
+    .btn_orange{
+        background-color: #ff7f00;
+        color: #fff;
+    }
+    .btn_blue{
+        border: 1px solid #0078c8;
+        color: #0078c8;
+        border-radius: 20px;
+    }
+    .btn_blue:hover{
+        color: #fff;
+        background-color: #0078c8;
+        border-color: #0078c8;
+    }
+    .fontcolor{
+        color: #0078c8;
+    }
+    .item-top{
+        font-size: 16px;
+        height: 48px;
+        line-height: 48px;
+        padding: 0 20px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        background-color: #e6f0fa;
+    }
+    .pull-left{
+        float: left;
+        font-size: 16px;
+        line-height: 48px;
+    }
+    .pull-right{
+        float: right;
+        font-size: 16px;
+        line-height: 48px;
+    }
+    .item-id{
+        margin-right: 20px;
+        font-size: 14px;
+        color: #333;
+    }
+    .survey-item{
+        border-radius: 8px;
+        border: 2px solid #e1ebf5;
+    }
+    .item-bot{
+        height: 58px;
+    }
+</style>
+<body >
+
+    <div style="background-color:#0078c8;width: 100%">
+            <div class="container text-center">
+                <div class="row" >
+                    <div class="col-lg-2 col-md-2 col-sm-2"><img src="https://www.wjx.cn/images/newimg/index/mobieindexnew.png" class="img-responsive"></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    <div class="col-lg-2  col-md-2 col-sm-2 menu font"><i class="glyphicon glyphicon-menu-hamburger glyphicon-white"></i> 我的文君</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 menu font dropdown">
+                        <span class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user glyphicon-white"></span> <span id="nowuser">{{userID.uid}}</span>
+                        </span>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">用户信息</a></li>
+                            <li><a href="#">升级</a></li>
+                            <li><a href="#">客服中心</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 menu font"><i class="glyphicon glyphicon-comment"></i> 消息</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 menu font" ><a href="index.php?c=login&b=loginout" style="color: white"><span class="glyphicon glyphicon-off glyphicon-white "></span> 退出</a></div>
+                </div>
+
+            </div>
+    </div>
+    <div class="container">
+        <div class="row" id="exam">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-1">
+                        <a href="index.php?c=Newwjx&b=show" class="btn btn-default btn_orange"><span class="glyphicon glyphicon-plus"></span>创建问卷</a>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="exampleInputName2">Name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                            </div>
+                            <button type="submit" class="btn btn-default">Send invitation</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10">
+
+                <div id="example">
+                    <wj-list url="index.php?c=Person&b=exam"></wj-list>
+                    <pagelist></pagelist>
+                </div>
+
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        </div>
+        <div class="row" id="onexam" style="display: none">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 text-center">
+                <div class="text-center">
+                    <img style="margin: 0 auto" src="https://www.wjx.cn/Images/newimg/pic-1/picture1.png" class="img-responsive">
+                    <h4 >您目前还没有问卷，马上创建一份问卷吧！</h4>
+                    <a href="index.php?c=Newwjx&b=show" class="btn btn-default btn_orange"><span class="glyphicon glyphicon-plus"></span>创建问卷</a>
+                    <a href="#" class="btn btn-default btn_blue">体验问卷功能</a>
+                    <div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 text-left">
+                            <h3 class="fontcolor">样本服务</h3>
+                            <p>您是否苦恼缺乏理想的填写人群？小星拥有260万样本库活跃成员，高效、精准匹配您的需求！</p>
+                            <a href="#" class="btn btn-default btn_blue" >我要协助</a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 text-right">
+                            <h3 class="fontcolor">人工录入问卷</h3>
+                            <p>亲，如果准备好了文档，不想花时间创建问卷，您可以委托小星帮您快速录入，省时省心！</p>
+                            <a href="#" class="btn btn-default btn_blue" >我想了解</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="row">
+            <a href="#">问卷星</a>
+            <span >|</span>
+            <span>不止问卷调查/在线考试</span>
+        </div>
+    </div>
+</body>
+<script>
+    // 注册
+
+
+    // 创建根实例
+var newuser=new Vue({
+    el:'#nowuser',
+    data:{
+        userID:[{'nowuser':'lili'}]
+    },
+    created:function(){
+        var _this=this;
+        $.ajax({
+            type:'get',
+            url:'index.php?c=Person&b=nowuser',
+            dataType:'json',
+            success:function(res){
+                console.log(res);
+                _this.userID=res[0];
+            }
+        })
+    }
+});
+    var bus = new Vue();
+Vue.component('pagelist',{
+   template:'<nav>\
+            <ul class="pager" >\
+            <li   ><a href="#" @click="changePre">上一页</a></li>\
+            <li   ><a href="#"  v-on:click="changeNext" >下一页</a></li>\
+            </ul>\
+            </nav>\
+            ',
+    methods:{
+        changePre:function(){
+            bus.$emit('pagepre',1);
+        },
+        changeNext:function(){
+            /*
+            先定义一个空的vue实例
+            emit 方法，
+            emit（），两个参数 第一个,发射器的名称 第二个，发射出去的内容
+            **/
+            bus.$emit('pagenext',1);
+        }
+    }
+});
+Vue.component('wj-list',{
+    /*
+        template 标签编写必须用最高等级（div）的标签包裹
+    * */
+    template:'<div>\
+            <div class="survey-item" v-for="li in examData">\
+                <div class="item-top">\
+                    <div class="pull-left"><a href="">{{li.tname}}</a><div class="pull-left item-id">ID{{li.tid}}</div></div>\
+                     <div class="pull-right">{{li.time}}</div>\
+                </div>\
+                 <div class="item-bot">\
+                    <div class="process-box pull-left">\
+                        <a href="javascript:void(0)">设计问卷</a>\
+                        <a href="javascript:void(0)">发送问卷</a>\
+                        <a href="javascript:void(0)">分析&下载</a>\
+                     </div>\
+                     <div class="operation-box pull-right">\
+                        <a href="javascript:void(0)">发布</a>\
+                        <a href="javascript:void(0)">复制</a>\
+                        <a href="javascript:void(0)">删除</a>\
+                    </div>\
+                 </div>\
+            </div>\
+            </div>\
+            ',
+    props:['url'],
+
+    data:function(){
+        return{
+            examData:'lk',
+            nextpage:1,
+            prepage:1,
+            nowpage:1
+        }
+    },
+    /*
+     beforecreat
+        Vue 被实例化后，但是还是在创建之前，这个时候，变量还没建立
+     created
+        Vue实例化和创建都完成了，这个时候，初始变量也建立好了，那么这里可以通过发送
+        请求给初始化变量赋值，达到更新变量的操作
+      beforeMount
+        Vue 有基础的绚烂方，这个阶段，代表实例化完成，创建也完成，但是还没绚烂
+        到DOM标签上，准备进行绚烂
+      mount
+        实例化完成，创建完成，绚烂完成
+    * */
+    created:function(){
+        var _this3=this;
+       /*
+        非父子组件通信
+        $on 监听
+       * */
+        this.initfun(this.nowpage,this.url);
+        bus.$on('pagepre',function(){
+                _this3.initfun(_this3.prepage,_this3.url);
+        });
+        bus.$on('pagenext',function(){
+            _this3.initfun(_this3.nextpage,_this3.url);
+        })
+        },
+    methods:{
+            initfun:function(a,url){
+                var url1='{:url("index/person/exam",["nowpage"=>'+a+'])}';
+                console.log(url1);
+                var _this2=this;
+                $.ajax({
+                    type:'get',
+
+                    url:url,
+                    dataType:'json',
+                    data:'nowpage='+a,
+                    success:function(res){
+                        console.log(res);
+                        if(res[0].length==0)
+                        {
+                            $('#onexam').css({
+                                "display":"block"
+                            });
+                            $('#example').css({
+                                "display":"none"
+                            })
+                        }
+                        else
+                        {
+                            _this2.examData=res[0];
+                            _this2.nextpage=res[1]['next'];
+                            _this2.prepage=res[1]['previou'];
+                            _this2.nowpage=res[1]['nowpage'];
+                            $('#onexam').css({
+                                "display":"none"
+                            });
+                            $('#example').css({
+                                "display":"block"
+                            });
+                        }
+                    }
+                })
+            }
+        }
+});
+    new Vue({
+        el: '#example'
+    });
+
+</script>
+</html>

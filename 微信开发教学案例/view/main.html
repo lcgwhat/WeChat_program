@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="view/css/bootstrap.min.css" rel="stylesheet">
+    <script src="__STACIC__/js/jquery-1.12.3.min.js" ></script>
+    <script src="__STACIC__/js/bootstrap.min.js" ></script>
+</head>
+<style>
+    .menu{
+       /*/ line-height: 5px;*/
+    }
+    .emphasize{
+        color: #ff9300;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .h2{
+        font-size: 22px;
+        color: #fff;
+        margin: 20px 0 40px 0;
+        text-align: center;
+    }
+    .btn_free{
+        font-size: 22px;
+        padding: 0 46px;
+        line-height: 50px;
+        border-radius: 25px;
+        border: none;
+        background: #ff941a;
+        color: #fff;
+    }
+    .btn-blue{
+        background-color: #1ea0fa;
+        color: white;
+    }
+    .btn_orange{
+        background-color: #ff7f00;
+        color: #fff;
+    }
+    .background_gray{
+        background-color: #f5f8fa;
+    }
+    .footer{
+        background-color: #494b4c;
+        bottom: 0;
+        width: 100%;
+        /*height: 246px;*/
+        /*clear: both;*/
+    }
+    .span{
+        font-size: 16px;
+        color: #84878a;
+        margin-left: 6px;
+    }
+    .holyg{
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    header,footer{
+        display: flex;
+        flex: 1;
+    }
+    .holyg_body{
+        display: flex;
+        flex: 1;
+    }
+    .holyg_content{
+        flex: 1;
+    }
+    .holyg_nav,.holyg_aside{
+        flex: 0 0 12em;
+    }
+    .holyg_nav{
+        order: -1;
+    }
+    .item1 {
+        display: flex;
+        -webkit-flex:8;
+        flex:8;
+        align-content: center;
+    }
+    .item2 {
+        display: flex;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+    .item0{
+        -webkit-flex: 1;
+        flex: 1;
+        justify-content:center;
+    }
+    .flex-item {
+        margin: 10px;
+    }
+    .item3{
+        -webkit-flex: 3;
+        flex: 3;
+    }
+    .nav_item{
+        display: flex;
+        -webkit-flex: 2;
+        flex: 2;
+        align-content: center;
+    }
+    .btn_item{
+        display: flex;
+        -webkit-flex: 1;
+        flex: 1;
+        align-content: center;
+    }
+    .bacontent{
+        display: flex;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+    .img_item{
+        display: flex;
+        -webkit-flex: 10;
+        flex: 10;
+
+    }
+    .text_item{
+        display: flex;
+        -webkit-flex: 10;
+        flex: 10;
+        flex-direction:column;
+    }
+</style>
+<body class="holyg">
+    <header>
+        <div class="item0"></div>
+        <div class="item0">
+            <a href="#"><img class="img-responsive" src="https://www.wjx.cn/images/logo.png"></a>
+        </div>
+        <div class="item3"></div>
+        <div class="item1">
+            <div class="nav_item">
+                <div class="flex-item">首页</div>
+                <div class="flex-item">应用展示</div>
+                <div class="flex-item">企业版服务</div>
+                <div class="flex-item">样板服务</div>
+                <div class="flex-item">问卷调差模板</div>
+            </div>
+           <div class="btn_item">
+               <div class="item0"><a href="index.php?c=login&b=show" class="btn btn-default">登入</a></div>
+               <div class="item0"><a href=""  class="btn btn-default">注册</a></div>
+               <div class="item0"><button type="button"  class="btn btn-default btn_orange" onclick="jumpWechat()" data-toggle="modal" data-target="#myModal">微信登入</button></div>
+           </div>
+        </div>
+        <div class="item0"></div>
+    </header>
+    <div class="holyg_body">
+
+        <main class="holyg_content">
+            <div class="container-fluid" style="text-align: center; height: 636px;background:url('__STACIC__/img/banner.jpg')">
+                <div class="row">
+                    <div class="container">
+                        <h1 style="color:white;text-align:center ;margin-top: 100px">不止问卷调查 / 在线考试</h1>
+                        <div  class="h2">
+                            <em class="emphasize">1,870</em>万用户已在问卷星上回收<em class="emphasize">11.71</em>亿份答卷
+                        </div>
+                        <a href="" class="btn btn-default btn_free">免费使用</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bacontent">
+                <div class="item0"></div>
+                <div class="img_item">
+                    <img src="__STACIC__/img/survey.png" class="img-responsive">
+                </div>
+                <div class="text_item">
+                    <table class="table table-condensed table-striped" style="margin-top: 150px">
+                        <tr>
+                            <td colSpan="2">在线问卷调查既复杂又简单，我们将诸多强大的功能集成到系统中，把最好的用户体验交给您。</td>
+                        </tr>
+                        <tr>
+                            <td>轻松导入问卷</td>
+                            <td>原始数据下载</td>
+                        </tr>
+                        <tr>
+                            <td>多渠道分发问卷</td>
+                            <td>自动生成图表</td>
+                        </tr>
+                        <tr>
+                            <td>完美适配移动端</td>
+                            <td>付费收集答案</td>
+                        </tr>
+                    </table>
+                    <a href="" class="btn btn-default btn-blue">问卷调差介绍</a>
+                </div>
+                <div class="item0"></div>
+            </div>
+            <div class="bacontent  background_gray">
+                <div class="item0"></div>
+                <div class="text_item">
+                    <table class="table table-condensed table-striped" style="margin-top: 150px">
+                        <tr>
+                            <td colSpan="2">整合线下考试的场景和线上系统的优势，问卷星在线考试定会对您大
+                                有助益。</td>
+                        </tr>
+                        <tr>
+                            <td>批量录入试题</td>
+                            <td>题库随机抽题</td>
+                        </tr>
+                        <tr>
+                            <td>考试时间控制</td>
+                            <td>系统自动阅卷</td>
+                        </tr>
+                        <tr>
+                            <td>自定义成绩单</td>
+                            <td>成绩查询系统</td>
+                        </tr>
+                    </table>
+                    <a href="" class="btn btn-default btn_orange">在线考试系统介绍</a>
+                </div>
+                <div class="img_item">
+                    <img class="img-responsive" src="__STACIC__/img/test.png"/>
+                </div>
+                <div class="item0"></div>
+            </div>
+            <div class="bacontent">
+                <div class="item0"></div>
+                <div class="img_item">
+                    <img src="./view/img/360.png" class="img-responsive">
+                </div>
+                <div class="text_item">
+                    <table class="table table-condensed table-striped" style="margin-top: 150px">
+                        <tr>
+                            <td colSpan="2">360度评估操作简单、功能强大，能全方位、多维度评估员工，
+                                挖掘员工发展潜力，帮助企业挑选和培养优秀人才。</td>
+                        </tr>
+                        <tr>
+                            <td>人员名单批量导入</td>
+                            <td>一对多批量评估</td>
+                        </tr>
+                        <tr>
+                            <td>维度/权重/部门设置</td>
+                            <td>邮件/短信/密码邀请</td>
+                        </tr>
+                        <tr>
+                            <td>多终端直接作答</td>
+                            <td>个人/部门详细报告</td>
+                        </tr>
+                    </table>
+                    <a href="" class="btn btn-default btn-blue">360度评估介绍</a>
+                </div>
+                <div class="item0"></div>
+            </div>
+            <div class="bacontent  background_gray">
+                <div class="item0"></div>
+                <div class="text_item">
+                    <table class="table table-condensed table-striped" style="margin-top: 150px">
+                        <tr>
+                            <td colSpan="2">准备好素材，分分钟就可以拥有一个强大的在线投票平台。</td>
+                        </tr>
+                        <tr>
+                            <td>文字投票</td>
+                            <td>图片评选</td>
+                        </tr>
+                        <tr>
+                            <td>视频竞选</td>
+                            <td>防刷票设置</td>
+                        </tr>
+
+                    </table>
+                    <a href="" class="btn btn-default btn_orange">在线投票介绍</a>
+                </div>
+                <div class="img_item">
+                    <img class="img-responsive" src="__STACIC__/img/vote.png"/>
+                </div>
+                <div class="item0"></div>
+            </div>
+            <div class="bacontent">
+                <div class="item0"></div>
+                <div class="img_item"><img src="__STACIC__/img/evaluation.png" class="img-responsive"></div>
+                <div class="text_item">
+                    <table class="table table-condensed table-striped" style="margin-top: 150px">
+                        <tr>
+                            <td colSpan="2">在线测评为您提供了丰富的个性化测评设置空间，专业的功能
+                                设置直观展现差异化的测评结果，从而搭建专属您的测评系统。</td>
+                        </tr>
+                        <tr>
+                            <td>多级维度设置</td>
+                            <td>标准分差值对比</td>
+                        </tr>
+                        <tr>
+                            <td>自定义测评结果</td>
+                            <td>可视化测评数据</td>
+                        </tr>
+
+                    </table>
+                    <a href="" class="btn btn-default btn-blue">在线测评介绍</a>
+                </div>
+                <div class="item0"></div>
+            </div>
+            <div class="bacontent  background_gray">
+                <div class="item0"></div>
+                <div class="text_item">
+                    <table class="table table-condensed table-striped" style="margin-top: 150px">
+                        <tr>
+                            <td colSpan="2">报名表单功能总是能让您的工作事半功倍。</td>
+                        </tr>
+                        <tr>
+                            <td>活动报名</td>
+                            <td>信息收集</td>
+                        </tr>
+                        <tr>
+                            <td>微信签到</td>
+                            <td>意见反馈表</td>
+                        </tr>
+                        <tr>
+                            <td>用户信息表</td>
+                            <td>数据标记查询</td>
+                        </tr>
+                    </table>
+                    <a href="" class="btn btn-default btn_orange">报名表介绍</a>
+                </div>
+                <div class="img_item">
+                    <img class="img-responsive" src="__STACIC__/img/form.png"/>
+                </div>
+                <div class="item0"></div>
+            </div>
+            <div class="bacontent">
+                <div class="item0"></div>
+                <div class="img_item"></div>
+                <div class="text_item"></div>
+                <div class="item0"></div>
+            </div>
+
+
+            <div class="container text-center">
+                <div class="row">
+                    <div class="h3">他们正在使用</div>
+                    <div class="h4" style="font-size: 16px">问卷星付费客户覆盖超过2万家企业和国内90%的高校，是各行业领导品牌最为信赖的企业数据平台。<a href="">客户展示</a></div>
+                </div>
+                <div>
+                    <img src="__STACIC__/img/consult.png" class="img-responsive" style="display: block">
+                    <img src="__STACIC__/img/college.png" class="img-responsive" style="display: none">
+                    <img src="__STACIC__/img/financial.png" class="img-responsive" style="display: none">
+                    <img src="__STACIC__/img/internet.png" class="img-responsive" style="display: none">
+                </div>
+                <a href="" class="btn btn-default btn-blue">了解企业版</a><br>
+                <a href="">免费试用</a>
+            </div>
+        </main>
+
+
+    </div>
+    <footer>
+        <div class="container-fluid footer">
+            <div class="row">
+                <div style="width: 70%;margin:0 auto;margin-top: 40px">
+                    <div class="col-lg-2 col-md-2 col-sm-2 text-left span">
+                        <img src="https://www.wjx.cn/images/logo.png" class="img-responsive"/><br>
+                        <span><img src="https://image.wjx.cn/images/newimg/index/phone.png"><span>400-993-5858</span></span><br>
+                        <span><img src="https://image.wjx.cn/images/newimg/index/email.png"><span>cs#wjx.cn</span></span><br>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 span">
+                        <h3>产品</h3>
+                        <span>企业版</span><br>
+                        <span>云考试</span><br>
+                        <span>定制版</span><br>
+                        <span>样本服务</span><br>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 span">
+                        <h3>客户</h3>
+                        <span>客户展示</span><br>
+                        <span>最新问卷</span><br>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 span">
+                        <h3>支持</h3>
+                        <span>客户中心</span><br>
+                        <span>帮助中心</span><br>
+                        <span>开放平台</span><br>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 span">
+                        <h3>团队</h3>
+                        <span>关于我们</span><br>
+                        <span>加入我们</span><br>
+                        <span>产品动态</span><br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!--
+     mymodel
+    -->
+    <!--<div class="modal fade" role="dialog" id="myModal">-->
+        <!--<div class="modal-dialog" role="document" >-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<button style="float: right" type="button" class="btn btn-warning" data-dismiss="modal">关闭</button>-->
+                <!--</div>-->
+                <!--<div class="modal-body">-->
+                    <!--qq登入-->
+                <!--</div>-->
+                <!--<div class="modal-footer">-->
+                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    <!--<button type="button" class="btn btn-primary">报错</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</body>
+<script>
+   // $('myModal')
+//    $('#myModal').on('show.bs.modal',function(){
+//
+//    })
+
+   function jumpWechat()
+   {
+
+       /*
+        微信授权中心地址参数
+        1、appid
+
+        2、redirect_uri -》回调地址
+        指定微信官方用户愿意授权，把他带回来的地址
+
+        3、response_type固定值
+
+        4、scope 授权模式
+            1、授权模式(snsapi_userinfo)
+            2、静默模式(snsapi_base)
+
+        5、state 可选的非必须，用来回调地址中，包含其他参数，一起返回
+
+            #wechat_redirect -》建议加上这个参数，防止微信内置浏览器网页变形
+        */
+       var redisurl=encodeURIComponent("http://106.14.214.55/demo2");
+       location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6abb8eec565d5134&redirect_uri="+redisurl
++"&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect "
+   }
+
+</script>
+</html>
